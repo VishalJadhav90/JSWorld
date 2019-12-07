@@ -15,3 +15,15 @@ let oranges = "3";
 console.log(apples + oranges);
 
 console.log(+apples + +oranges);
+
+//above line is equivalent of
+console.log(Number(apples) + Number(oranges));
+
+//assignment opearator returns value
+let a = 1;
+let b = 2;
+let c;
+
+c = 3 - (b = b+a);
+
+console.log(c);
