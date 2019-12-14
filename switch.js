@@ -72,6 +72,10 @@ switch(ip) {
     case 2:
     case 3:
         alert("2/3");
+        break;
     default:
         alert("unrecognised value");
 }
+
+let resp = confirm("blah blah black sheep have any wool?");
+alert("you have entered "+resp);
