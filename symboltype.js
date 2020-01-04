@@ -42,3 +42,6 @@ let o = {
 console.log(o[0]); // 0
 console.log(o['0']); //same property 0
 
+//global symbols, how to access keys with same symbol 
+
+
