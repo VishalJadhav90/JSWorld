@@ -35,3 +35,18 @@ function sayHi() {
     console.log(this);
 }
 sayHi();
+
+nobj.talk = sayHi;
+nobj.talk();
+
+var arr_obj = {
+    user: "vishal",
+    sayHi() {
+        console.log("hey " + this.user);
+    },
+};
+
+var hi = arr_obj.sayHi;
+var user = "vishal";
+hi();
+
