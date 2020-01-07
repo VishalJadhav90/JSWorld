@@ -16,3 +16,15 @@ let ladder = {
 }
 
 ladder.up().up().down().showStep();
+
+let dict = {
+    name: 'vishal',
+    [ladder]: 'vishal'
+};
+
+let keys = Object.keys(dict);
+console.log(keys);
+console.log(typeof(keys[1]));
+
+let sum = dict + ladder;
+console.log(sum);
