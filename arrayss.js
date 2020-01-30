@@ -58,3 +58,29 @@ console.log("----------------------");
 for (let a in dq) {
     console.log(a);
 }
+
+
+//freaky array lengh property
+//its the largest index plus one - not the count of actual elements in array 
+//plus its changable - you can change length propery of a array length
+//one we truncate the array by setting array length - we loose truncated part permanently 
+//if we increase length, then nothing interesting happens
+let fa = [1,2,3];
+fa.length = 10;
+for (let a of fa) { //reads the fa.length property and this loops for 10 times
+    console.log(a);
+}
+
+console.log("------------------------");
+fa.length = 1; //this will truncate last to values of array - and its irreversible
+for (let a of fa) {
+    console.log(a);
+}
+
+console.log("------------------------");
+let wa = new Array(3);
+console.log(wa.length, wa);
+
+//wierd
+let waa = new Array('vishal', 'jadhav', 'blah', 'lbah');
+console.log(waa.length, waa);
