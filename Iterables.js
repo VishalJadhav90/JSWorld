@@ -48,3 +48,39 @@ range = {
 for (let aa of range) {
     console.log(aa);
 }
+
+//Iterator over a string
+for (let c of 'vishal') {
+    console.log(c);
+}
+
+//we can explicitly use Iterator object 
+let str = 'vishal';
+let it = str[Symbol.iterator]();
+while (true) {
+    let result = it.next();
+    if (result.done) {
+        break;
+    } else {
+        console.log(result);
+    }
+}
+
+//iterables and array-like objects are different things
+//array like objects have number as attributes and has length property
+//iterables object has Symbol.iterable set on it.
+//for..of looks for Symbol.iterable - arraylike object does not have that set so error
+//for..in works good for arraylike objects, but not not very good for iterable objects as they dont have length method.
+let arraylike = {
+    1: 'one',
+    2: 'two',
+    length: 2,
+};
+
+for (let el in arraylike) {
+    console.log(el);
+}
+
+for (let r in range) {
+    console.log(r);
+}
