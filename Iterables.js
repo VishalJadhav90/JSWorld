@@ -31,14 +31,15 @@ for (let a of range) {
 //range[Symbol.iterator]() - returns the range object itself: and it has the nessesory next method, and remembers the progress 
 //of for..of using this.begin attribute. 
 range = {
-    begin: 1,
-    end: 5,
+    from: 1,
+    to: 5,
     [Symbol.iterator]() {
+        this.current = this.from;
         return this;
     },
     next() {
-        if (this.begin <= this.end) {
-            return {done: false, value: this.begin++};
+        if (this.current <= this.to) {
+            return {done: false, value: this.current++};
         } else {
             return {done: true};
         }
@@ -72,15 +73,25 @@ while (true) {
 //for..of looks for Symbol.iterable - arraylike object does not have that set so error
 //for..in works good for arraylike objects, but not not very good for iterable objects as they dont have length method.
 let arraylike = {
-    1: 'one',
-    2: 'two',
+    0: 'one',
+    1: 'two',
     length: 2,
 };
 
+console.log("--------------------")
 for (let el in arraylike) {
     console.log(el);
 }
 
+console.log("--------------------")
 for (let r in range) {
     console.log(r);
 }
+
+//since Symbol.iterable and arraylike are different things we need something universal that can give array give a
+//iterable, Array.from(arraylike) gives you an array
+let arr = Array.from(arraylike);
+console.log(arr);
+
+arr = Array.from(range);
+console.log(arr);
