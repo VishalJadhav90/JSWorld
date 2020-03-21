@@ -93,3 +93,27 @@ function getDaysAgo(date, days) {
 
 let datee = new Date(2015, 0, 2);
 console.log(getDaysAgo(datee, 1));
+
+function getLastDayOfMonth(year, month) {
+    let dd = new Date(year, month+1);
+    dd = new Date(dd-1);
+    return dd.getDate();
+}
+
+console.log(getLastDayOfMonth(2020, 1));
+
+function getSecondsToday() {
+    let datetoday = new Date();
+    let day_start = new Date(datetoday.getFullYear(), datetoday.getMonth(), datetoday.getDate());
+    return datetoday-day_start;
+}
+
+console.log(getSecondsToday());
+
+function getSecondsToTomorrow() {
+    let datetoday = new Date();
+    let tmrw = new Date(datetoday.getFullYear(), datetoday.getMonth(), datetoday.getDate()+1);
+    return tmrw-datetoday;
+}
+
+console.log(getSecondsToTomorrow());
