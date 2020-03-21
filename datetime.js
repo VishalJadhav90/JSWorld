@@ -70,3 +70,26 @@ console.log(dd);
 let nn = Date.parse('2020-01-26T05:30:00.000Z') //if we  mention Z then the time_str given in Date.parse is treated as UTC str
 let ddd = new Date(nn);
 console.log(ddd);
+
+
+let ex = Date.parse('2012-02-20:03:12:00:000')
+let exdate = new Date(ex);
+console.log(exdate);
+console.log(exdate.getFullYear(), exdate.getMonth(), exdate.getDate(), exdate.getHours(), exdate.getMinutes(), exdate.getSeconds());
+
+function getWeekDay(date) {
+    let day = date.getDay();
+    let daymap = new Map([[1, "MO"], [2, "TU"], [3, "WE"], [4, "TH"], [5, "FR"], [6, "SA"], [7, "SU"]]);
+    console.log(daymap);
+    return daymap.get(day);
+}
+
+console.log(getWeekDay(new Date(2012, 0, 3)));
+
+function getDaysAgo(date, days) {
+    let newd = new Date(date-days);
+    return newd;
+}
+
+let datee = new Date(2015, 0, 2);
+console.log(getDaysAgo(datee, 1));
